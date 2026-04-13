@@ -1674,8 +1674,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- <form class="contact-form reveal" id="contactForm"> -->
-                <form action="https://formsubmit.co/techmr236@gmail.com" method="POST">
+                <form class="contact-form reveal" id="contactForm">
+                    <!-- <form action="https://formsubmit.co/techmr236@gmail.com" method="POST"> -->
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="fname">Name</label>
@@ -1786,16 +1786,33 @@
         });
 
         /* ── CONTACT FORM ─── */
+        // document.getElementById('contactForm').addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     const btn = this.querySelector('.btn-submit');
+        //     btn.textContent = 'Sending…';
+        //     btn.disabled = true;
+        //     setTimeout(() => {
+        //         document.getElementById('formSuccess').style.display = 'flex';
+        //         btn.style.display = 'none';
+        //         this.reset();
+        //     }, 1200);
+        // });
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            const btn = this.querySelector('.btn-submit');
-            btn.textContent = 'Sending…';
-            btn.disabled = true;
-            setTimeout(() => {
-                document.getElementById('formSuccess').style.display = 'flex';
-                btn.style.display = 'none';
-                this.reset();
-            }, 1200);
+
+            const name = document.getElementById('fname').value;
+            const email = document.getElementById('femail').value;
+            const subject = document.getElementById('fsubject').value;
+            const message = document.getElementById('fmessage').value;
+
+            const text =
+                `Hello, I contacted you from your portfolio.%0A%0A
+            Name: ${name}%0A
+            Email: ${email}%0A
+            Subject: ${subject}%0A
+            Message: ${message}`;
+
+            window.open(`https://wa.me/916206429713?text=${text}`, '_blank');
         });
 
         /* ── ACTIVE NAV LINK ─── */
