@@ -253,11 +253,12 @@ h1,h2,h3,h4,h5,h6 { font-weight: 900; line-height: 1.05; letter-spacing: -0.025e
 
 /* ======================== PROJECTS (3D TILT & MOCKUPS) ======================== */
 .project-card { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); margin-bottom: clamp(4rem, 8vw, 7rem); align-items: center; position: relative; }
-.project-card:nth-child(even) .project-info { order: 2; }
-.project-card:nth-child(even) .project-visual { order: 1; }
+.project-card--flip .project-info { order: 2; }
+.project-card--flip .project-visual { order: 1; }
 
 .project-info { max-width: 600px; }
 .project-number { font-size: clamp(4rem, 10vw, 8rem); font-weight: 900; color: var(--color-border); line-height: 1; position: absolute; top: -30px; right: -20px; z-index: 0; pointer-events: none; letter-spacing: -0.05em; transition: color 0.5s ease; }
+.project-number-left { right: auto; left: -20px; }
 .project-header, .project-title, .project-desc, .tech-list, .btn { position: relative; z-index: 1; }
 .project-title { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; margin-top: 1rem; }
 .project-desc { font-size: var(--text-lg); color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.6; }
@@ -339,9 +340,10 @@ h1,h2,h3,h4,h5,h6 { font-weight: 900; line-height: 1.05; letter-spacing: -0.025e
     .hero-visual { justify-content: center; margin-top: 2rem; }
     .hero-tag { display: none; }
     .bento-large, .bento-medium { grid-column: span 6; }
-    .project-card, .project-card:nth-child(even) .project-info, .project-card:nth-child(even) .project-visual { order: 0; }
+    .project-card, .project-card--flip .project-info, .project-card--flip .project-visual { order: 0; }
     .project-card { grid-template-columns: 1fr; gap: 3rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .project-number { display: none; }
 }
 
 @media (max-width: 768px) {
